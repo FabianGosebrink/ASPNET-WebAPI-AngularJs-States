@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <base href="/">
+
+    <link href="libs/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="libs/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet" />
+    <link href="libs/angular-loading-bar/src/loading-bar.css" rel="stylesheet" />
+
+    <title>AngularStates</title>
+
+    <!-- Bootstrap core CSS -->
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <!--<link href="starter-template.css" rel="stylesheet">-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-ng-app="AngularJsDemoApp">
+
+    <div ng-include="'app/shell.html'"></div>
+
+    <!-- bower:js -->
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="libs/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="libs/angular-resource/angular-resource.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="app/application.js"></script>
+    <script src="app/Common/commonModule.js"></script>
+    <script src="app/Home/homeModule.js"></script>
+    <script src="app/Contact/contactModule.js"></script>
+    <script src="app/Common/Services/ArrayHelpers.js"></script>
+    <script src="app/Home/Controllers/homeController.js"></script>
+    <script src="app/Home/Services/peopleServices.js"></script>
+    <script src="app/Contact/Controllers/contactController.js"></script>
+    <!-- endinject -->
+
+</body>
+</html>

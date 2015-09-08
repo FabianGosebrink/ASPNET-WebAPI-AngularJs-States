@@ -1,0 +1,65 @@
+﻿<div class="container">
+    <toaster-container> </toaster-container>
+    <div class="starter-template">
+        <div class="jumbotron">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <form class="form-inline" data-ng-submit="viewModel.addPerson()" name="newPersonForm">
+                        <div class="form-group">
+                            <label class="sr-only" for="name">Email address</label>
+                            <input type="text" class="form-control"
+                                   id="name" name="name" placeholder="Enter name"
+                                   data-ng-model="viewModel.newPerson.Name" data-ng-minlength="2" required>
+                            <span class="error" data-ng-show="newPersonForm.name.$error.required">*</span>
+                            <span class="error" data-ng-show="newPersonForm.name.$error.minlength"><br />Minimum 2 Characters</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="age">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" data-ng-model="viewModel.newPerson.Age" required>
+                            <span class="error" data-ng-show="newPersonForm.age.$error.required">*</span>
+                            <span class="error" data-ng-show="newPersonForm.age.$error.number">Not a valid number</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-default" data-ng-disabled="newPersonForm.$invalid">Add person</button>
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <span>
+                    <label>Person to add will be: <i>{{viewModel.newPerson.Name}}</i> with an age of <i>{{viewModel.newPerson.Age}}</i></label>
+                </span>
+            </div>
+            <br />
+            <div class="row">
+                <table class="table table-striped resultArea" ng-cloak>
+                    <tr>
+                        <th><a href="" data-ng-click="predicate = 'Name'; reverse=!reverse">Name</a></th>
+
+                        <th class="text-right">
+                            <a href="" data-ng-click="predicate = 'Age'; reverse=!reverse">Age</a>
+                        </th>
+                        <th class="text-right">
+                            Actions
+                        </th>
+                    </tr>
+                    <tr data-ng-repeat="person in viewModel.peopleService.allPeople |  orderBy:predicate:reverse track by $index">
+                        <td class="text-left">
+                            {{person.Name}}
+                        </td>
+                        <td class="text-right">
+                            {{person.Age}}
+                        </td>
+                        <td class="text-right">
+                            <button data-ng-click="viewModel.deletePerson(person)" class="btn btn-primary btn-xs">Delete</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.container -->
